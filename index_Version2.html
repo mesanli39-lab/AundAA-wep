@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AundAA - Profesyonel Hizmetler / Professionelle Dienstleistungen</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+  }
+  header {
+    background: #004aad;
+    padding: 0.8rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  header img.logo {
+    height: 50px;
+    width: 50px;
+  }
+  header h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+  nav {
+    background: #00337a;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  nav a:hover {
+    background: #0051d2;
+  }
+  .lang-select {
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  .button {
+    background: #004aad;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .button:hover {
+    background: #0051d2;
+    transform: scale(1.05);
+  }
+
+  /* Hero Section */
+  .hero {
+    background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    height: 350px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .hero h2 {
+    font-size: 2.8rem;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  }
+  .hero p {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  }
+
+  /* Content Sections */
+  section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  section h2 {
+    color: #004aad;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  /* Hizmetler Kartları */
+  .services-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 1.5rem;
+    padding: 1rem 0 2rem 0;
+  }
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+  .card h3 {
+    margin-top: 0;
+    color: #004aad;
+  }
+  .card p {
+    margin: 0.8rem 0 0 0;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* İletişim Bölümü */
+  #iletisim p {
+    font-size: 1.1rem;
+    margin: 0.6rem 0;
+    text-align: center;
+  }
+  #iletisim a.button {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    background: #00337a;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .hidden { display: none; }
+
+  /* Responsive */
+  @media (max-width:600px) {
+    nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    header {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .hero {
+      height: 250px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://cdn-icons-png.flaticon.com/512/2920/2920059.png" alt="AundAA Logo" class="logo" />
+  <h1>AundAA</h1>
+</header>
+
+<div class="lang-select">
+  <button class="button" onclick="setLang('tr')">Türkçe</button>
+  <button class="button" onclick="setLang('de')">Deutsch</button>
+</div>
+
+<nav>
+  <a href="#hakkimizda" class="lang-tr">Hakkımızda</a>
+  <a href="#hizmetler" class="lang-tr">Hizmetlerimiz</a>
+  <a href="#iletisim" class="lang-tr">İletişim</a>
+  <a href="#hakkimizda" class="lang-de hidden">Über uns</a>
+  <a href="#hizmetler" class="lang-de hidden">Unsere Dienstleistungen</a>
+  <a href="#iletisim" class="lang-de hidden">Kontakt</a>
+</nav>
+
+<div class="hero lang-tr">
+  <h2>Profesyonel Hizmetleriniz İçin AundAA</h2>
+  <p>Güvenilir, hızlı ve kaliteli çözümler sunuyoruz.</p>
+</div>
+<div class="hero lang-de hidden">
+  <h2>Professionelle Dienstleistungen von AundAA</h2>
+  <p>Wir bieten zuverlässige, schnelle und hochwertige Lösungen.</p>
+</div>
+
+<section id="hakkimizda" class="lang-tr">
+  <h2>Hakkımızda</h2>
+  <p>AundAA, günlük yaşamın tüm ihtiyaçları için profesyonel çözümler sunar. Deneyimli kadromuz ile zamanında, güvenilir ve kaliteli hizmet sunmaktayız.</p>
+</section>
+<section id="hakkimizda" class="lang-de hidden">
+  <h2>Über uns</h2>
+  <p>AundAA bietet professionelle Lösungen für den Alltag. Mit unserem erfahrenen Team garantieren wir zuverlässigen und qualitativ hochwertigen Service.</p>
+</section>
+
+<section id="hizmetler" class="lang-tr">
+  <h2>Hizmetlerimiz</h2>
+  <div class="services-cards">
+    <div class="card">
+      <h3>📦 Kurye ve Paket Taşımacılığı</h3>
+      <p>Zamanında teslimat ve güvenli taşıma garantisi.</p>
+    </div>
+    <div class="card">
+      <h3>🚚 Şehir içi ve şehirler arası nakliyat</h3>
+      <p>Hızlı ve uygun fiyatlı taşımacılık çözümleri.</p>
+    </div>
+    <div class="card">
+      <h3>🧹 Ev ve ofis temizliği</h3>
+      <p>Profesyonel temizlik ekibimiz ile hijyen sağlanır.</p>
+    </div>
+    <div class="card">
+      <h3>🔧 Küçük tamirat ve tadilat işleri</h3>
+      <p>Pratik çözümler ve kaliteli işçilik.</p>
+    </div>
+    <div class="card">
+      <h3>🪑 Mobilya montajı</h3>
+      <p>Hızlı ve güvenilir montaj hizmeti.</p>
+    </div>
+  </div>
+</section>
+<section id="hizmetler" class="lang-de hidden">
+  <h2>Unsere Dienstleistungen</h2>
+  <div class="services-cards">
+    <div class="card">
+      <h3>📦 Kurier- und Paketdienst</h3>
+      <p>Zuverlässige Lieferung und sichere Transporte.</p>
+    </div>
+    <div class="card">
+      <h3>🚚 Innerstädtischer und überregionaler Transport</h3>
+      <p>Schnelle und kostengünstige Transportlösungen.</p>
+    </div>
+    <div class="card">
+      <h3>🧹 Büro- und Haushaltsreinigung</h3>
+      <p>Professionelle Reinigung für Hygiene und Sauberkeit.</p>
+    </div>
+    <div class="card">
+      <h3>🔧 Kleine Reparatur- und Renovierungsarbeiten</h3>
+      <p>Praktische Lösungen und hochwertige Handwerksarbeit.</p>
+    </div>
+    <div class="card">
+      <h3>🪑 Möbelmontage</h3>
+      <p>Schneller und zuverlässiger Montageservice.</p>
+    </div>
+  </div>
+</section>
+
+<section id="iletisim" class="lang-tr">
+  <h2>İletişim</h2>
+  <p>📞 Telefon: +49 177 3971856</p>
+  <p>📱 WhatsApp: <a class="button" href="https://wa.me/491773971856" target="_blank">Mesaj Gönder</a></p>
+  <p>📧 E-posta: info@aundaa.com</p>
+</section>
+<section id="iletisim" class="lang-de hidden">
+  <h2>Kontakt</h2>
+  <p>📞 Telefon: +49 177 3971856</p>
+  <p>📱 WhatsApp: <a class="button" href="https://wa.me/491773971856" target="_blank">Nachricht senden</a></p>
+  <p>📧 E-Mail: info@aundaa.com</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 AundAA. Tüm hakları saklıdır. / Alle Rechte vorbehalten.</p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    if(lang === 'tr') {
+      document.querySelectorAll('.lang-tr').forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang-de').forEach(el => el.classList.add('hidden'));
+    } else if(lang === 'de') {
+      document.querySelectorAll('.lang-tr').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.lang-de').forEach(el => el.classList.remove('hidden'));
+    }
+  }
+  setLang('tr'); // varsayılan dil Türkçe
+</script>
+
+</body>
+</html>
